@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
@@ -40,13 +41,17 @@ class RegisterController extends Controller
 
         $data = $request->only(['name', 'email', 'password']);
 
-        User::create([
+        //create a new user from request data
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
 
-        return redirect("/")->with('success', 'User created successfully.');
+        //this will make the newly registered user to have a session and logged into the system
+        Auth::login($user);
+
+        return redirect("/")->with('success', 'You have successfully registered.');
     }
 
     /**
