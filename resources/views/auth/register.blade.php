@@ -31,7 +31,7 @@
                 <input type="password" name="password_confirmation" id="password_confirmation" class="rounded-md border border-blue-800 focus:outline-none focus:border-sky-500 bg-gray-100 p-2">
             </div>
             <div class="w-full">
-                <button type="submit" class="w-full bg-gray-700 hover:bg-black text-white rounded-md p-2 mt-4">Register</button>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-black text-white rounded-md p-2 mt-4">Register</button>
             </div>
         </form>
     </div>
