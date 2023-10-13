@@ -1,6 +1,6 @@
 <div class="flex flex-col bg-blue-950 min-h-screen w-64 border-r dark:border-blue-900 sticky top-0 left-0">
     <div class="container mx-auto py-6 border-b border-gray-300 dark:border-gray-900 flex justify-center items-center">
-        <h3 class="text-2xl text-white font-bold">Vite</h3>
+        <h3 class="text-2xl text-white font-bold">WebApp</h3>
     </div>
     <div class="flex flex-col py-8 px-4">
         <ul class="text-white">
