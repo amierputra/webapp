@@ -7,32 +7,37 @@
             @csrf
             <div class="flex flex-col space-y-1 mb-4">
                 <label for="name" class="">Name</label>
-                <input type="text" name="name" id="name" class="rounded-lg border border-blue-800 focus:outline-none focus:border-sky-500 bg-gray-100 p-2">
+                <input type="text" name="name" id="name" class="rounded-lg border border-violet-800 focus:outline-none focus:ring focus:ring-violet-900 focus:ring-offset-1 bg-gray-100 p-2">
                 @if ($errors->has('name'))
                 <span class="text-red-600">{{ $errors->first('name') }}</span>
                 @endif
             </div>
             <div class="flex flex-col space-y-1 mb-4">
                 <label for="email" class="">Email</label>
-                <input type="email" name="email" id="email" class="rounded-lg border border-blue-800 focus:outline-none focus:border-sky-500 bg-gray-100 p-2">
+                <input type="email" name="email" id="email" class="rounded-lg border border-violet-800 focus:outline-none focus:ring focus:ring-violet-900 focus:ring-offset-1 bg-gray-100 p-2">
                 @if ($errors->has('email'))
                 <span class="text-red-600">{{ $errors->first('email') }}</span>
                 @endif
             </div>
             <div class="flex flex-col space-y-1 mb-4">
                 <label for="password" class="">Password</label>
-                <input type="password" name="password" id="password" class="rounded-lg border border-blue-800 focus:outline-none focus:border-sky-500 bg-gray-100 p-2">
+                <input type="password" name="password" id="password" class="rounded-lg border border-violet-800 focus:outline-none focus:ring focus:ring-violet-900 focus:ring-offset-1 bg-gray-100 p-2">
                 @if ($errors->has('password'))
                 <span class="text-red-600">{{ $errors->first('password') }}</span>
                 @endif
             </div>
             <div class="flex flex-col space-y-1 mb-4">
                 <label for="password_confirmation" class="">Confirm Password</label>
-                <input type="password" name="password_confirmation" id="password_confirmation" class="rounded-lg border border-blue-800 focus:outline-none focus:border-sky-500 bg-gray-100 p-2">
+                <input type="password" name="password_confirmation" id="password_confirmation" class="rounded-lg border border-violet-800 focus:outline-none focus:ring focus:ring-violet-900 focus:ring-offset-1 bg-gray-100 p-2">
             </div>
             <div class="w-full">
-                <button type="submit" class="w-full bg-blue-900 hover:bg-black text-white rounded-lg p-2 mt-4">Register</button>
+                <button type="submit" class="w-full bg-violet-800 hover:bg-violet-950 focus:ring focus:ring-violet-600 focus:ring-offset-1 text-white px-4 py-2 rounded-lg mt-4">Register</button>
             </div>
         </form>
+        <hr class="bg-gray-900 h-0.5 mt-4">
+        <div class="flex justify-center mt-4 inline-block">
+            <p class="mr-2">Already have an account?</p>
+            <a href="{{ route('login') }}" class="text-violet-800 underline">Login here</a>
+        </div>
     </div>
 </x-layouts.guest>

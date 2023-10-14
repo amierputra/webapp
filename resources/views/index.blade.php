@@ -10,6 +10,7 @@
         </div>
     </div>
     @endif
-
-    <h1 class="text-3xl">Test</h1>
+    <div class="flex flex-col container mx-auto">
+        <h1 class="text-3xl">Test</h1>
+    </div>
 </x-layouts.app>

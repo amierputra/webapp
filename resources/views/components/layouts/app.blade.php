@@ -17,7 +17,7 @@
             <header class="bg-white border-b border-gray-300 shadow-md sticky top-0">
                 <div class="container mx-auto px-4 py-6 flex justify-between items-center">
                     <button type="button" id="hideSidebar">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="w-8 h-8 text-blue-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.0" stroke="currentColor" class="w-8 h-8 text-violet-800">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                     </button>
