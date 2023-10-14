@@ -31,7 +31,7 @@
                 </div>
                 <div class="px-4 space-y-1">
                     <h3 class="font-medium">Status</h3>
-                    <p class="inline-block bg-green-300 text-green-800 text-xs font-bold rounded-full px-4 py-1">
+                    <p class="inline-block bg-green-100 border border-green-200 text-green-800 text-xs font-bold rounded-lg px-4 py-1">
                         Active
                     </p>
                 </div>
