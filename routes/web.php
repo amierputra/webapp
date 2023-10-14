@@ -30,5 +30,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('users', [UserController::class, 'index'])->name('admin.users');
         Route::get('users/create', [UserController::class, 'create'])->name('admin.users.create');
         Route::post('users', [UserController::class, 'store'])->name('admin.users.store');
+        Route::get('users/{user}', [UserController::class, 'show'])->name('admin.users.show');
+        Route::get('users/edit/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
+
     });
 });
