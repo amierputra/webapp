@@ -41,13 +41,13 @@ class UserController extends Controller
             'password' => 'required|confirmed'
         ]);
 
-        $data =$request->all();
+        $data = $request->all();
 
         //create a new user from request data
         User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password'=> Hash::make($data['password']),
+            'password' => Hash::make($data['password']),
         ]);
 
         //redirect back to previous page
@@ -57,9 +57,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(User $user)
     {
         //
+        return view('admin.users.show', array('user' => $user));
     }
 
     /**
@@ -68,6 +69,8 @@ class UserController extends Controller
     public function edit(string $id)
     {
         //
+        $user = User::find($id);
+        return response()->json($user);
     }
 
     /**
