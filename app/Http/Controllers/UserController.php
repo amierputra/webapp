@@ -79,6 +79,19 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        // Update user data
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        // Update other fields as needed
+
+        $user->save();
+        return response()->json(['success' => 'User updated successfully']);
     }
 
     /**
