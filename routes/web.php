@@ -32,6 +32,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('users', [UserController::class, 'store'])->name('admin.users.store');
         Route::get('users/{user}', [UserController::class, 'show'])->name('admin.users.show');
         Route::get('users/edit/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
-
+        Route::put('users/update/{id}', [UserController::class, 'update'])->name('admin.users.update');
     });
 });
