@@ -10,7 +10,7 @@
         </div>
         <h1 class="text-3xl font-bold uppercase">User Details</h1>
         <div class="flex flex-row space-x-4">
-            <div class="w-3/4 bg-sky-50 px-8 py-4 mt-6 border rounded-lg shadow-md">
+            <div class="w-3/4 bg-slate-200 px-8 py-4 mt-6 border rounded-lg shadow-md">
                 <dl class="divide-y divide-gray-400">
                     <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-gray-900">Full name</dt>
@@ -22,7 +22,7 @@
                     </div>
                 </dl>
             </div>
-            <div class="w-1/4 bg-gray-800 px-8 py-4 mt-6 rounded-lg shadow-lg text-white space-y-4">
+            <div class="w-1/4 bg-slate-900 px-8 py-4 mt-6 rounded-lg shadow-lg text-white space-y-4">
                 <div class="px-4">
                     <h3 class="font-medium">Register Date</h3>
                     <p class="text-white text-sm">

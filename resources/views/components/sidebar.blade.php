@@ -1,4 +1,4 @@
-<div class="flex flex-col bg-gray-800 min-h-screen w-64 border-r dark:border-violet-950 sticky top-0 left-0">
+<div class="flex flex-col bg-slate-900 min-h-screen w-64 border-r dark:border-violet-950 sticky top-0 left-0">
     <div class="container mx-auto py-6 flex justify-center items-center shadow-md">
         <h3 class="text-2xl text-white font-bold">WebApp</h3>
     </div>
