@@ -90,6 +90,13 @@
                                         @endif
                                     </div>
                                     <div class="flex flex-col space-y-1 mb-4">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" name="phone" id="phone" class="rounded-lg border border-violet-800 focus:outline-none focus:ring focus:ring-violet-900 focus:ring-offset-1 bg-gray-100 p-2">
+                                        @if ($errors->has('phone'))
+                                        <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                        @endif
+                                    </div>
+                                    <div class="flex flex-col space-y-1 mb-4">
                                         <label for="email" class="">Email</label>
                                         <input type="email" name="email" id="email" class="rounded-lg border border-violet-800 focus:outline-none focus:ring focus:ring-violet-900 focus:ring-offset-1 bg-gray-100 p-2">
                                         @if ($errors->has('email'))
@@ -120,10 +127,11 @@
             <div class="border border-gray-300 mt-8 rounded-lg overflow-x-auto">
                 <table class="table-auto w-full">
                     <thead>
-                        <tr class="bg-gray-800 text-white text-left">
+                        <tr class="bg-slate-800 text-white text-left">
                             <th class="p-4">No.</th>
                             <th class="p-4">Name</th>
                             <th class="p-4">Role</th>
+                            <th class="p-4">Phone No.</th>
                             <th class="p-4">Email</th>
                             <th class="p-4">Status</th>
                             <th class="p-4">Action</th>
@@ -137,6 +145,7 @@
                             <td class="px-4 py-2 text-sm text-gray-500">
                                 Admin
                             </td>
+                            <td class="px-4 py-2 text-sm text-gray-500" id="user-phone">{{$user->phone}}</td>
                             <td class="px-4 py-2 text-sm text-gray-500" id="user-email">{{ $user->email }}</td>
                             <td class="px-4 py-2">
                                 <p class="inline-block bg-green-100 border border-green-200 text-green-800 text-xs font-bold rounded-lg px-2 py-1">Active</p>
@@ -199,6 +208,7 @@
                             // Populate the edit form fields with the user data
                             $("#showEdit input[name='user_id']").val(userId);
                             $("#showEdit input[name='name']").val(response.name);
+                            $("#showEdit input[name='phone']").val(response.phone);
                             $("#showEdit input[name='email']").val(response.email);
 
                             // Show the edit form
@@ -218,9 +228,10 @@
                 $("#updateUserButton").on("click", function() {
                     var userId = $("#user_id").val();
 
-                    // Create an object to store the updated user data
+                    // Create an object to store the updated user data based on editForm fields
                     var updatedUserData = {
                         name: $("#showEdit input[name='name']").val(),
+                        phone: $("#showEdit input[name='phone']").val(),
                         email: $("#showEdit input[name='email']").val(),
                         // Add other fields as needed
                     };
@@ -244,9 +255,13 @@
                                 $('#successMessageContainer').html('<div class="flex items-center p-4 mb-4 text-sm bg-green-500 text-green-50 rounded-lg" role="alert"><svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" /></svg><span class="font-medium mr-2">Success alert!</span>' + successMessage + '</div>');
                             }
 
-                            $("#user-name").text(updatedUserData.name);
-                            $("#user-email").text(updatedUserData.email);
-                            $("#showEdit").addClass("hidden");
+                            // Update the user data in the table
+                            var updatedRow = $(".clickable-row[data-href*='" + userId + "']");
+                            updatedRow.find("#user-name").text(updatedUserData.name);
+                            updatedRow.find("#user-email").text(updatedUserData.email);
+                            updatedRow.find("#user-phone").text(updatedUserData.phone);
+                            
+                            $("#showEdit").addClass("hidden"); // Hide the edit form
                         },
                         error: function(error) {
                             // Handle errors (e.g., display an error message)
