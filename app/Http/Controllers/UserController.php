@@ -87,6 +87,7 @@ class UserController extends Controller
 
         // Update user data
         $user->name = $request->input('name');
+        $user->phone = $request->input('phone');
         $user->email = $request->input('email');
         // Update other fields as needed
 
